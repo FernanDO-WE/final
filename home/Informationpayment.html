@@ -12,6 +12,32 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
+
+    const hunglunna_List = [     
+"//files.catbox.moe/7mqwpd.mp3", //muon roi ma sao con
+"//files.catbox.moe/p0s9vv.mp3", // tuyet sac
+"//files.catbox.moe/kum1ip.mp3", // neu ngay ay", // Que boi
+];
+//Random music
+let index = Math.floor(Math.random() * hunglunna_List.length);
+const audio = new Audio(hunglunna_List[index]);
+function hunglunnaAudio() {
+  audio.play();
+}
+document.addEventListener("click", hunglunnaAudio);
+audio.addEventListener("ended", function() {
+  index = (index + 1) % hunglunna_List.length;
+  audio.src = hunglunna_List[index];
+  audio.play();
+});
+// Onload
+function __onCreate() {
+    audio.play();
+}
+</script>
+
+
+    
     <script>
         ((function() {
         var a = [],
